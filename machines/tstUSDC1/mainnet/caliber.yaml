@@ -4,13 +4,13 @@ config:
     value: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
   context_helper_address:
     type: "address"
-    value: "0x8590DECe61A3Feb53E87c499E0b30307684ED627" 
+    value: "0x8590DECe61A3Feb53E87c499E0b30307684ED627"
   aave_horizon_address:
     type: "address"
     value: "0xAe05Cd22df81871bc7cC2a04BeCfb516bFe332C8"
   unsigned_math_helper_address:
     type: "address"
-    value: "0x836C9007DbD73fcFC473190304C72b7E39BaBb91" 
+    value: "0x836C9007DbD73fcFC473190304C72b7E39BaBb91"
 positions:
   # Morpho Vault Positions
   - id: "77590748279218246310796884579338401703"
@@ -44,7 +44,7 @@ positions:
     group_id: "1"
     description: "Aave Core Borrow USDT"
     instructions: !include "./instructions/aave-core-borrow-usdt.yaml"
-  
+
   # Aave Horizon Positions
   - id: "87224421864707228069930864185331520862"
     group_id: "2"
