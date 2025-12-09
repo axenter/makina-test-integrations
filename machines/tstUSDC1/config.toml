@@ -1,0 +1,14 @@
+name = "tstUSDC1"
+chain = "mainnet"
+address = "0xf5847C47Bd5CedCba797c9267F50634Ceb3511A2"
+
+[calibers.mainnet]
+address = "0xd86F600442A6786E4d98C2059B04fB88ff374a67"
+swapper = "0xe403614F41554fC0f7A3dD581878D0024Dc978E9"
+rootfiles = "github:MakinaHQ/makina-test-integrations/machines/tstUSDC1/mainnet/rootfiles"
+
+[calibers.mainnet.accounting_token]
+address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+decimals = 6
+name = "USD Coin"
+symbol = "USDC"
