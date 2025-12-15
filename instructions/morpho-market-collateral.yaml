@@ -1,0 +1,68 @@
+# add collateral
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.market_label}
+    path: "../../../blueprints/morpho/deposit.yaml:add_collateral"
+    inputs:
+      morpho:
+        type: "address"
+        value: ${config.morpho_address}
+      executor_helper:
+        type: "address"
+        value: ${config.caliber_helper_address}
+      market_id:
+        type: "bytes32"
+        value: ${position.market_id}
+      collateral_token:
+        type: "address"
+        value: ${position.token_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+
+# withdraw collateral
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.market_label}
+    path: "../../../blueprints/morpho/withdraw.yaml:withdraw_collateral"
+    inputs:
+      morpho:
+        type: "address"
+        value: ${config.morpho_address}
+      market_id:
+        type: "bytes32"
+        value: ${position.market_id}
+      executor_helper:
+        type: "address"
+        value: ${config.caliber_helper_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+
+# account for position collateral
+- is_debt: false
+  instruction_type: "ACCOUNTING"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.market_label}
+    path: "../../../blueprints/morpho/account.yaml:account_collateral"
+    inputs:
+      market_id:
+        type: "bytes32"
+        value: ${position.market_id}
+      morpho:
+        type: "address"
+        value: "${config.morpho_address}"
+      executor_helper:
+        type: "address"
+        value: "${config.caliber_helper_address}"
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
