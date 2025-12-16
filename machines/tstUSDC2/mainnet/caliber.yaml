@@ -22,14 +22,17 @@ positions:
     group_id: "0"
     description: "Morpho Vault USDC Gauntlet Frontier"
     instructions: !include "./instructions/morpho-vault-usdc-gauntlet-frontier.yaml"
+  # Veda Vault Positions
   - id: "671"
     group_id: "0"
     description: "Veda Vault Golden Goose wstETH"
     vars:
       vault_label: "Golden Goose wstETH"
       teller_address: "0x4C74ccA483A278Bcb90Aea3f8F565e56202D82B2"
-      token_address: ${token_list.mainnet.USDC}
+      token_address: ${token_list.mainnet.wstETH}
       boring_vault_address: "0xef417FCE1883c6653E7dC6AF7c6F85CCDE84Aa09"
+      accountant_address: "0xc873F2b7b3BA0a7faA2B56e210E3B965f2b618f5"
+      base_token_unit: "1e18"
     instructions: !include "../../../instructions/veda-vault.yaml"
   # Other Positions
   - id: "777"

@@ -15,3 +15,27 @@
       asset_address:
         type: "address"
         value: ${position.token_address}
+
+- is_debt: false
+  instruction_type: "ACCOUNTING"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.vault_label}
+    path: "../../../blueprints/veda/account.yaml:account"
+    inputs:
+      boring_vault_address:
+        type: "address"
+        value: ${position.boring_vault_address}
+      accountant_address:
+        type: "address"
+        value: ${position.accountant_address}
+      unsigned_math_helper:
+        type: "address"
+        value: ${config.unsigned_math_helper_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+      base_token_unit:
+        type: "uint256"
+        value: ${position.base_token_unit}
