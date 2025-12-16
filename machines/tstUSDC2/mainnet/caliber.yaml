@@ -16,25 +16,20 @@ positions:
   # Morpho Vault Positions
   - id: "77590748279218246310796884579338401703"
     group_id: "0"
-    description: "Morpho Vault USDC Smokehouse"
-    instructions: !include "./instructions/morpho-vault-usdc-smokehouse.yaml"
+    description: "Morpho Vault Smokehouse USDC"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Smokehouse USDC"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xBEeFFF209270748ddd194831b3fa287a5386f5bC"
   - id: "11232424494326814282538250204373920286"
     group_id: "0"
-    description: "Morpho Vault USDC Gauntlet Frontier"
-    instructions: !include "./instructions/morpho-vault-usdc-gauntlet-frontier.yaml"
-  # Veda Vault Positions
-  - id: "671"
-    group_id: "0"
-    description: "Veda Vault Golden Goose wstETH"
+    description: "Morpho Vault Gauntlet Frontier USDC"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
     vars:
-      vault_label: "Golden Goose wstETH"
-      boring_vault_address: "0xef417FCE1883c6653E7dC6AF7c6F85CCDE84Aa09"
-      token_address: ${token_list.mainnet.wstETH}
-      teller_address: "0x4C74ccA483A278Bcb90Aea3f8F565e56202D82B2"
-      accountant_address: "0xc873F2b7b3BA0a7faA2B56e210E3B965f2b618f5"
-      boring_queue_address: "0xe39682c3C44b73285A2556D4869041e674d1a6B7"
-      base_token_unit: "1e18"
-    instructions: !include "../../../instructions/veda-vault.yaml"
+      vault_label: "Gauntlet USDC Frontier"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xc582F04d8a82795aa2Ff9c8bb4c1c889fe7b754e"
   # Other Positions
   - id: "777"
     group_id: "0"

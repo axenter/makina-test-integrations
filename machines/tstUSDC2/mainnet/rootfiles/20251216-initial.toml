@@ -1,3 +1,6 @@
+# this is a generated file - do not edit manually
+# root: 0x82ecb75556f04e79a21dd6d7503ceb18dc7bdd0fd10d0091ca608f28940b6822
+
 [tokens."${token_list.mainnet.USDC}"]
 chainId = 1
 address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
@@ -625,7 +628,7 @@ field = "proofs"
 
 [instructions.morpho.account_vault."Gauntlet USDC Frontier"]
 position_id = "11232424494326814282538250204373920286"
-description = "Morpho Vault USDC Gauntlet Frontier"
+description = "Morpho Vault Gauntlet Frontier USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 1
@@ -645,7 +648,7 @@ inputs_slots = []
 
 [instructions.morpho.account_vault."Smokehouse USDC"]
 position_id = "77590748279218246310796884579338401703"
-description = "Morpho Vault USDC Smokehouse"
+description = "Morpho Vault Smokehouse USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 1
@@ -665,7 +668,7 @@ inputs_slots = []
 
 [instructions.morpho.deposit_vault."Gauntlet USDC Frontier"]
 position_id = "11232424494326814282538250204373920286"
-description = "Morpho Vault USDC Gauntlet Frontier"
+description = "Morpho Vault Gauntlet Frontier USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
@@ -689,7 +692,7 @@ type = "Uint"
 
 [instructions.morpho.deposit_vault."Smokehouse USDC"]
 position_id = "77590748279218246310796884579338401703"
-description = "Morpho Vault USDC Smokehouse"
+description = "Morpho Vault Smokehouse USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
@@ -713,7 +716,7 @@ type = "Uint"
 
 [instructions.morpho.redeem_vault."Gauntlet USDC Frontier"]
 position_id = "11232424494326814282538250204373920286"
-description = "Morpho Vault USDC Gauntlet Frontier"
+description = "Morpho Vault Gauntlet Frontier USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
@@ -735,7 +738,7 @@ type = "Uint"
 
 [instructions.morpho.redeem_vault."Smokehouse USDC"]
 position_id = "77590748279218246310796884579338401703"
-description = "Morpho Vault USDC Smokehouse"
+description = "Morpho Vault Smokehouse USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
@@ -757,7 +760,7 @@ type = "Uint"
 
 [instructions.morpho.redeem_vault_relative."Gauntlet USDC Frontier"]
 position_id = "11232424494326814282538250204373920286"
-description = "Morpho Vault USDC Gauntlet Frontier"
+description = "Morpho Vault Gauntlet Frontier USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
@@ -783,7 +786,7 @@ type = "Uint"
 
 [instructions.morpho.redeem_vault_relative."Smokehouse USDC"]
 position_id = "77590748279218246310796884579338401703"
-description = "Morpho Vault USDC Smokehouse"
+description = "Morpho Vault Smokehouse USDC"
 is_debt = false
 group_id = "0"
 instruction_type = 0
