@@ -1,0 +1,118 @@
+protocol: "veda"
+
+inputs:
+  request_asset_address:
+    type: "address"
+  boring_vault_address:
+    type: "address"
+  boring_queue_address:
+    type: "address"
+  unsigned_math_helper:
+    type: "address"
+  context_helper_address:
+    type: "address"
+
+actions:
+  request_withdraw:
+    calls:
+      - description: "Approve vault shares to BoringOnChainQueue"
+        target: ${inputs.boring_vault_address}
+        selector: "approve(address,uint256)"
+        parameters:
+          - type: "address"
+            value: ${inputs.boring_queue_address}
+          - type: "uint128"
+            value: ${input_slots.shares_to_withdraw}
+
+      - description: "Create withdrawal request in BoringOnChainQueue"
+        target: ${inputs.boring_queue_address}
+        # "requestOnChainWithdraw(address assetOut, uint128 amountOfShares, uint16 discount, uint24 secondsToDeadline)"
+        selector: "requestOnChainWithdraw(address,uint128,uint16,uint24)"
+        parameters:
+          - type: "address"
+            value: ${inputs.request_asset_address}
+          - type: "uint128"
+            value: ${input_slots.shares_to_withdraw}
+          - type: "uint16"
+            value: ${input_slots.discount}
+          - type: "uint24"
+            value: ${input_slots.seconds_to_deadline}
+
+    input_slots:
+      shares_to_withdraw:
+        type: "uint128"
+        description: "The amount of vault shares to withdraw"
+      seconds_to_deadline:
+        type: "uint24"
+        description: "The time in seconds the request is valid for"
+      discount:
+        type: "uint16"
+        description: "The discount to apply to the withdraw in bps."
+
+  request_withdraw_relative:
+    calls:
+      - description: "Get caliber's address"
+        target: ${inputs.context_helper_address}
+        selector: "msgSender()"
+        parameters: []
+        return:
+          name: "caliber_address"
+          type: "address"
+
+      - description: "Query balance of vault shares"
+        target: ${inputs.boring_vault_address}
+        selector: "balanceOf(address)"
+        parameters:
+          - type: "address"
+            value: ${returns.caliber_address}
+        return:
+          name: "vault_shares_balance"
+          type: "uint256"
+
+      - description: "Calculate shares to withdraw based on basis points"
+        target: ${inputs.unsigned_math_helper}
+        selector: "mulDiv(uint256,uint256,uint256)"
+        parameters:
+          - type: "uint256"
+            value: ${returns.vault_shares_balance}
+          - type: "uint256"
+            value: ${input_slots.bps_to_withdraw}
+          - type: "uint256"
+            value: "10000"
+        return:
+          name: "shares_to_withdraw"
+          type: "uint128"
+
+      - description: "Approve vault shares to BoringOnChainQueue"
+        target: ${inputs.boring_vault_address}
+        selector: "approve(address,uint256)"
+        parameters:
+          - type: "address"
+            value: ${inputs.boring_queue_address}
+          - type: "uint128"
+            value: ${returns.shares_to_withdraw}
+
+      - description: "Create withdrawal request in BoringOnChainQueue"
+        target: ${inputs.boring_queue_address}
+        # "requestOnChainWithdraw(address assetOut, uint128 amountOfShares, uint16 discount, uint24 secondsToDeadline)"
+        selector: "requestOnChainWithdraw(address,uint128,uint16,uint24)"
+        parameters:
+          - type: "address"
+            value: ${inputs.request_asset_address}
+          - type: "uint128"
+            value: ${returns.shares_to_withdraw}
+          - type: "uint16"
+            value: ${input_slots.discount}
+          - type: "uint24"
+            value: ${input_slots.seconds_to_deadline}
+
+    input_slots:
+      bps_to_withdraw:
+        type: "uint256"
+        description: "The percentage of vault shares to withdraw in basis points (bps), 10000 bps = 100%"
+      seconds_to_deadline:
+        type: "uint24"
+        description: "The time in seconds the request is valid for"
+      discount:
+        type: "uint16"
+        description: "The discount to apply to the withdraw in bps."

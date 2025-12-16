@@ -42,3 +42,27 @@
       base_token_unit:
         type: "uint256"
         value: ${position.base_token_unit}
+
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.vault_label}
+    path: "../../../blueprints/veda/withdraw_boring_queue.yaml:request_withdraw_relative"
+    inputs:
+      boring_vault_address:
+        type: "address"
+        value: ${position.boring_vault_address}
+      boring_queue_address:
+        type: "address"
+        value: ${position.boring_queue_address}
+      unsigned_math_helper:
+        type: "address"
+        value: ${config.unsigned_math_helper_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+      request_asset_address:
+        type: "address"
+        value: ${position.token_address}
