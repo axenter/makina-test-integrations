@@ -1,0 +1,17 @@
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${position.token_address}
+  instruction:
+    label: ${position.vault_label}
+    path: "../../../blueprints/veda/deposit.yaml:deposit"
+    inputs:
+      teller_address:
+        type: "address"
+        value: ${position.teller_address}
+      boring_vault_address:
+        type: "address"
+        value: ${position.boring_vault_address}
+      asset_address:
+        type: "address"
+        value: ${position.token_address}

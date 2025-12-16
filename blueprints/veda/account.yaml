@@ -1,0 +1,61 @@
+protocol: "veda"
+
+inputs:
+  boring_vault_address:
+    type: "address"
+  accountant_address:
+    type: "address"
+  unsigned_math_helper:
+    type: "address"
+  context_helper_address:
+    type: "address"
+  base_token_unit:
+    type: "uint256"
+
+actions:
+  account:
+    calls:
+      - description: "Get caliber's address"
+        target: ${inputs.context_helper_address}
+        selector: "msgSender()"
+        parameters: []
+        return:
+          name: "caliber_address"
+          type: "address"
+      - description: "Get the user's balance of vault shares"
+        target: "${inputs.boring_vault_address}"
+        selector: "balanceOf(address)"
+        parameters:
+          - type: "address"
+            value: "${returns.caliber_address}"
+        return:
+          name: "vault_shares_balance"
+          type: "uint256"
+
+      - description: "Get exchange rate from Accountant (in units of base tokens)"
+        target: "${inputs.accountant_address}"
+        selector: "getRate()"
+        parameters: []
+        return:
+          name: "exchange_rate"
+          type: "uint256"
+
+      - description: "Calculate underlying base token value using exchange rate"
+        target: "${inputs.unsigned_math_helper}"
+        selector: "mulDiv(uint256,uint256,uint256)"
+        parameters:
+          - type: "uint256"
+            value: "${returns.vault_shares_balance}"
+          - type: "uint256"
+            value: "${returns.exchange_rate}"
+          - type: "uint256"
+            value: "${inputs.base_token_unit}" # 1e(decimals)
+        return:
+          name: "underlying_value"
+          type: "uint256"
+
+    reserved_slots:
+      - type: "uint256"
+        value: "${returns.underlying_value}"
+      - type: "uint256"
+        value: "${builtins.UINT256_MAX}"

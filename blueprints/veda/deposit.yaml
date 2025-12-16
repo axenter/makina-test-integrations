@@ -1,0 +1,40 @@
+protocol: "veda"
+
+inputs:
+  teller_address:
+    type: "address"
+  boring_vault_address:
+    type: "address"
+  asset_address:
+    type: "address"
+
+actions:
+  deposit:
+    calls:
+      - description: "Approve to the BoringVault"
+        target: ${inputs.asset_address}
+        selector: "approve(address,uint256)"
+        parameters:
+          - type: "address"
+            value: ${inputs.boring_vault_address}
+          - type: "uint256"
+            value: ${input_slots.amount_to_deposit}
+
+      - description: "Deposit asset through Teller and receive vault shares"
+        target: ${inputs.teller_address}
+        selector: "deposit(address,uint256,uint256)"
+        parameters:
+          - type: "address"
+            value: ${inputs.asset_address}
+          - type: "uint256"
+            value: ${input_slots.amount_to_deposit}
+          - type: "uint256"
+            value: ${input_slots.min_shares_out}
+
+    input_slots:
+      amount_to_deposit:
+        type: "uint256"
+        description: "The amount of base token to deposit into the vault"
+      min_shares_out:
+        type: "uint256"
+        description: "The minimum amount of vault shares to receive (slippage protection)"
