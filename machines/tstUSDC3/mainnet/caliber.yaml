@@ -29,7 +29,7 @@ positions:
       vault_label: "Gauntlet USDC Frontier"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xc582F04d8a82795aa2Ff9c8bb4c1c889fe7b754e"
-  - id: "66611926981936670390254275150328268836"
+  - id: "317674047022373827182618653676880817492"
     group_id: "0"
     description: "Morpho Vault Steakhouse USDC"
     instructions: !include "../../../instructions/morpho-vault.yaml"
@@ -37,7 +37,7 @@ positions:
       vault_label: "Steakhouse USDC"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB"
-  - id: "70916134908032255601120639099846007004"
+  - id: "30651621090656837837542443694366525060"
     group_id: "0"
     description: "Morpho Vault MEV Capital USDC"
     instructions: !include "../../../instructions/morpho-vault.yaml"
@@ -45,23 +45,23 @@ positions:
       vault_label: "MEV Capital USDC"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xd63070114470f685b75B74D60EEc7c1113d33a3D"
-  - id: "21563051768953602021910485712501614878"
-    group_id: "0"
-    description: "Morpho Vault KPK USDC Prime"
-    instructions: !include "../../../instructions/morpho-vault.yaml"
-    vars:
-      vault_label: "KPK USDC Prime"
-      token_address: ${token_list.mainnet.USDC}
-      vault_address: "0xe108fbc04852B5df72f9E44d7C29F47e7A993aDd"
-  - id: "61686132468174721405286061630148775692"
-    group_id: "0"
-    description: "Morpho Vault Hakutora USDC"
-    instructions: !include "../../../instructions/morpho-vault.yaml"
-    vars:
-      vault_label: "Hakutora USDC"
-      token_address: ${token_list.mainnet.USDC}
-      vault_address: "0x974c8FBf4fd795F66B85B73ebC988A51F1A040a9"
-  - id: "97117526985736930959313278378987120859"
+  # - id: "<update>"
+  #   group_id: "0"
+  #   description: "Morpho Vault KPK USDC Prime"
+  #   instructions: !include "../../../instructions/morpho-vault.yaml"
+  #   vars:
+  #     vault_label: "KPK USDC Prime"
+  #     token_address: ${token_list.mainnet.USDC}
+  #     vault_address: "0xe108fbc04852B5df72f9E44d7C29F47e7A993aDd"
+  # - id: "<update>"
+  #   group_id: "0"
+  #   description: "Morpho Vault Hakutora USDC"
+  #   instructions: !include "../../../instructions/morpho-vault.yaml"
+  #   vars:
+  #     vault_label: "Hakutora USDC"
+  #     token_address: ${token_list.mainnet.USDC}
+  #     vault_address: "0x974c8FBf4fd795F66B85B73ebC988A51F1A040a9"
+  - id: "239709107284824071718045124985443453227"
     group_id: "0"
     description: "Morpho Vault Alpha USDC Core"
     instructions: !include "../../../instructions/morpho-vault.yaml"
@@ -69,7 +69,7 @@ positions:
       vault_label: "Alpha USDC Core"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xb0f05E4De970A1aaf77f8C2F823953a367504BA9"
-  - id: "93204526954152047231636260165125429585"
+  - id: "65156809519399163794989907631687589959"
     group_id: "0"
     description: "Morpho Vault Clearstar USDC Reactor"
     instructions: !include "../../../instructions/morpho-vault.yaml"
@@ -77,7 +77,7 @@ positions:
       vault_label: "Clearstar USDC Reactor"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0x62fE596d59fB077c2Df736dF212E0AFfb522dC78"
-  - id: "58193596409546904127311079477022569725"
+  - id: "32341175561873583173143000180086943391"
     group_id: "0"
     description: "Morpho Vault Clearstar High Yield USDC"
     instructions: !include "../../../instructions/morpho-vault.yaml"
@@ -85,7 +85,7 @@ positions:
       vault_label: "Clearstar High Yield USDC"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0x9B5E92fd227876b4C07a8c02367E2CB23c639DfA"
-  - id: "49428575262887538812026731938871696909"
+  - id: "13197255701825927186251474242994749188"
     group_id: "0"
     description: "Morpho Vault MEV Capital PTS USDC"
     instructions: !include "../../../instructions/morpho-vault.yaml"
