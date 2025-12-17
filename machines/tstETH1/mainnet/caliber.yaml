@@ -7,6 +7,18 @@ config:
     value: "0x836C9007DbD73fcFC473190304C72b7E39BaBb91"
 
 positions:
+  - id: "671"
+    group_id: "0"
+    description: "Veda Vault Golden Goose wstETH"
+    vars:
+      vault_label: "Golden Goose wstETH"
+      boring_vault_address: "0xef417FCE1883c6653E7dC6AF7c6F85CCDE84Aa09"
+      token_address: ${token_list.mainnet.wstETH}
+      teller_address: "0x4C74ccA483A278Bcb90Aea3f8F565e56202D82B2"
+      accountant_address: "0xc873F2b7b3BA0a7faA2B56e210E3B965f2b618f5"
+      boring_queue_address: "0xe39682c3C44b73285A2556D4869041e674d1a6B7"
+      base_token_unit: "1e18"
+    instructions: !include "../../../instructions/veda-vault.yaml"
   # Other Positions
   - id: "777"
     group_id: "0"

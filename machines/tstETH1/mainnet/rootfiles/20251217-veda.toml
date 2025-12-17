@@ -1,0 +1,167 @@
+# this is a generated file - do not edit manually
+# root: 0xd004b172edf64f8081c80732bb553dc3c39e53b907fba97bc8c67adbd9b24214
+
+[tokens."${token_list.mainnet.wstETH}"]
+chainId = 1
+address = "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+name = "Wrapped liquid staked Ether 2.0"
+decimals = 18
+symbol = "wstETH"
+
+[instructions.merkl.harvest.Merkl]
+position_id = "777"
+description = "Merkl Harvest"
+is_debt = false
+group_id = "0"
+instruction_type = 2
+affected_tokens = []
+commands = ["0x71ee95c00180818283ff00ff3ef3d8ba38ebe18db133cec108f4d14ce00dd9ae"]
+state = [
+  "0xf8f2b2336f8f3139d343c33f49815a0c35e3c7a97a44fc9c538082a5c09c4dc3",
+  "0x1dca9170fb2417b0113118895cab68fdb33ddab264493656f2abd26bca5a91f4",
+  "0x1e58b0d11629f42685647974a200e9e62d553a9eb56dc6cc9130d61e10495de0",
+  "0xe027b98039a9275e4a147b3a9796d2521411ef59a5356320f3bbd4f66848455a",
+]
+bitmap = "0"
+
+[[instructions.merkl.harvest.Merkl.inputs_slots]]
+index = 0
+name = "merkl_claim_data.users"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.type]
+Array = "Address"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.meta_type]
+type = "MerklClaimData"
+name = "merkl_claim_data"
+field = "users"
+
+[[instructions.merkl.harvest.Merkl.inputs_slots]]
+index = 1
+name = "merkl_claim_data.tokens"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.type]
+Array = "Address"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.meta_type]
+type = "MerklClaimData"
+name = "merkl_claim_data"
+field = "tokens"
+
+[[instructions.merkl.harvest.Merkl.inputs_slots]]
+index = 2
+name = "merkl_claim_data.amounts"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.type]
+Array = "Uint"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.meta_type]
+type = "MerklClaimData"
+name = "merkl_claim_data"
+field = "amounts"
+
+[[instructions.merkl.harvest.Merkl.inputs_slots]]
+index = 3
+name = "merkl_claim_data.proofs"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.type.Array]
+Array = "FixedBytes32"
+
+[instructions.merkl.harvest.Merkl.inputs_slots.meta_type]
+type = "MerklClaimData"
+name = "merkl_claim_data"
+field = "proofs"
+
+[instructions.veda.account."Golden Goose wstETH"]
+position_id = "671"
+description = "Veda Vault Golden Goose wstETH"
+is_debt = false
+group_id = "0"
+instruction_type = 1
+affected_tokens = ["0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"]
+commands = [
+  "0xd737d0c701ff0000000000038590dece61a3feb53e87c499e0b30307684ed627",
+  "0x70a082310103ff0000000003ef417fce1883c6653e7dc6af7c6f85ccde84aa09",
+  "0x679aefce01ff000000000004c873f2b7b3ba0a7faa2b56e210e3b965f2b618f5",
+  "0xaa9a091201030402ff000000836c9007dbd73fcfc473190304c72b7e39babb91",
+]
+state = [
+  "0x",
+  "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "0x0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+  "0x",
+  "0x",
+]
+bitmap = "127605887595351923798765477786913079296"
+inputs_slots = []
+
+[instructions.veda.deposit."Golden Goose wstETH"]
+position_id = "671"
+description = "Veda Vault Golden Goose wstETH"
+is_debt = false
+group_id = "0"
+instruction_type = 0
+affected_tokens = ["0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"]
+commands = [
+  "0xd737d0c701ff0000000000048590dece61a3feb53e87c499e0b30307684ed627",
+  "0x095ea7b3010200ff000000ff7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+  "0x8b6099db0103000104ff00ff4c74cca483a278bcb90aea3f8f565e56202d82b2",
+]
+state = [
+  "0x4a444f324d327a31a252465094d0cf0bf263cc614b736fad77deec31792c3a1e",
+  "0xfe5db1c564d02921fedc5f6162a6d7b8bd1780bd0448956f4fa997170c13a51d",
+  "0x000000000000000000000000ef417fce1883c6653e7dc6af7c6f85ccde84aa09",
+  "0x0000000000000000000000007f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+  "0x",
+]
+bitmap = "63802943797675961899382738893456539648"
+
+[[instructions.veda.deposit."Golden Goose wstETH".inputs_slots]]
+index = 0
+name = "amount_to_deposit"
+type = "Uint"
+
+[[instructions.veda.deposit."Golden Goose wstETH".inputs_slots]]
+index = 1
+name = "min_shares_out"
+type = "Uint"
+
+[instructions.veda.request_withdraw_relative."Golden Goose wstETH"]
+position_id = "671"
+description = "Veda Vault Golden Goose wstETH"
+is_debt = false
+group_id = "0"
+instruction_type = 0
+affected_tokens = ["0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"]
+commands = [
+  "0xd737d0c701ff0000000000068590dece61a3feb53e87c499e0b30307684ed627",
+  "0x70a082310106ff0000000006ef417fce1883c6653e7dc6af7c6f85ccde84aa09",
+  "0xaa9a091201060003ff000006836c9007dbd73fcfc473190304c72b7e39babb91",
+  "0x095ea7b3010406ff000000ffef417fce1883c6653e7dc6af7c6f85ccde84aa09",
+  "0x6bb3b4760105060201ff00ffe39682c3c44b73285a2556d4869041e674d1a6b7",
+]
+state = [
+  "0xe03955617d04c9ad72e38844b404f0293b4da0d20aaaa0b0fa9bc28814ec552d",
+  "0x4a16fe71143c3ee01a1016d20319ecde3e68e44f127191a6f939b92db1712dac",
+  "0x79baed865bf9371d00132294f2c64374c2fa3e6a1cdaca2e991704fa93fcc759",
+  "0x0000000000000000000000000000000000000000000000000000000000002710",
+  "0x000000000000000000000000e39682c3c44b73285a2556d4869041e674d1a6b7",
+  "0x0000000000000000000000007f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+  "0x",
+]
+bitmap = "37218383881977644441306597687849648128"
+
+[[instructions.veda.request_withdraw_relative."Golden Goose wstETH".inputs_slots]]
+index = 0
+name = "bps_to_withdraw"
+type = "Uint"
+
+[[instructions.veda.request_withdraw_relative."Golden Goose wstETH".inputs_slots]]
+index = 1
+name = "seconds_to_deadline"
+type = "Uint"
+
+[[instructions.veda.request_withdraw_relative."Golden Goose wstETH".inputs_slots]]
+index = 2
+name = "discount"
+type = "Uint"
