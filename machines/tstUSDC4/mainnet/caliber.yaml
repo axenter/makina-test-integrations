@@ -1,0 +1,109 @@
+config:
+  aave_core_address:
+    type: "address"
+    value: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+  aave_horizon_address:
+    type: "address"
+    value: "0xAe05Cd22df81871bc7cC2a04BeCfb516bFe332C8"
+  morpho_address:
+    type: "address"
+    value: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+  unsigned_math_helper_address:
+    type: "address"
+    value: "0x836C9007DbD73fcFC473190304C72b7E39BaBb91"
+  caliber_helper_address:
+    type: "address"
+    value: "0x6E2ED2f457c41F38556Ab0c2b1185cc9e6563d8D"
+  context_helper_address:
+    type: "address"
+    value: "0x8590DECe61A3Feb53E87c499E0b30307684ED627"
+
+positions:
+  # Morpho Vault Positions
+  - id: "77590748279218246310796884579338401703"
+    group_id: "0"
+    description: "Morpho Vault USDC Smokehouse"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Smokehouse USDC"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xBEeFFF209270748ddd194831b3fa287a5386f5bC"
+  - id: "11232424494326814282538250204373920286"
+    group_id: "0"
+    description: "Morpho Vault USDC Gauntlet Frontier"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Gauntlet USDC Frontier"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xc582F04d8a82795aa2Ff9c8bb4c1c889fe7b754e"
+  # Morpho Market Positions
+
+  # Morpho tBTC/USDC — deposit/withdrawal collateral
+  - id: "671"
+    group_id: "1"
+    description: "Morpho tBTC Collateral (market: 0xe4cf...3f08)"
+    instructions: !include "../../../instructions/morpho-market-collateral.yaml"
+    vars:
+      market_label: "tBTC/USDC (0xe4cf...3f08)"
+      token_address: ${token_list.mainnet.tBTC}
+      market_id: "0xe4cfbee9af4ad713b41bf79f009ca02b17c001a0c0e7bd2e6a89b1111b3d3f08"
+
+  # Morpho tBTC/USDC — borrow/repay USDC
+  - id: "673"
+    group_id: "1"
+    description: "Morpho USDC Debt (market: 0xe4cf...3f08)"
+    instructions: !include "../../../instructions/morpho-market-debt.yaml"
+    vars:
+      market_label: "tBTC/USDC (0xe4cf...3f08)"
+      token_address: ${token_list.mainnet.USDC}
+      market_id: "0xe4cfbee9af4ad713b41bf79f009ca02b17c001a0c0e7bd2e6a89b1111b3d3f08"
+
+  # Morpho sUSDe/USDC — deposit/withdrawal collateral
+  - id: "672"
+    group_id: "2"
+    description: "Morpho sUSDe Collateral (market: 0x85c7...fcab)"
+    instructions: !include "../../../instructions/morpho-market-collateral.yaml"
+    vars:
+      market_label: "sUSDe/USDC (0x85c7...fcab)"
+      token_address: ${token_list.mainnet.sUSDe}
+      market_id: "0x85c7f4374f3a403b36d54cc284983b2b02bbd8581ee0f3c36494447b87d9fcab"
+
+  # Morpho sUSDe/USDC — borrow/repay USDC
+  - id: "674"
+    group_id: "2"
+    description: "Morpho USDC Debt (market: 0x85c7...fcab)"
+    instructions: !include "../../../instructions/morpho-market-debt.yaml"
+    vars:
+      market_label: "sUSDe/USDC (0x85c7...fcab)"
+      token_address: ${token_list.mainnet.USDC}
+      market_id: "0x85c7f4374f3a403b36d54cc284983b2b02bbd8581ee0f3c36494447b87d9fcab"
+
+  # Other Positions
+  - id: "777"
+    group_id: "0"
+    description: "Merkl Harvest"
+    instructions: !include "./instructions/merkl.yaml"
+  - id: "221614240530984971309101713062250192527"
+    group_id: "0"
+    description: "Curve crvUSD/USDT Pool"
+    instructions: !include "./instructions/curve-usdt-crvusd.yaml"
+  - id: "203336833608290082987101085377947340244"
+    group_id: "0"
+    description: "Curve crvUSD/USDC Pool"
+    instructions: !include "./instructions/curve-usdc-crvusd.yaml"
+
+  # Aave Core Positions
+  - id: "332697612920998824307877708016163852818"
+    group_id: "1"
+    description: "Aave Core Supply USDC"
+    instructions: !include "./instructions/aave-core-supply-usdc.yaml"
+  - id: "117961051486591206861124901427435972709"
+    group_id: "1"
+    description: "Aave Core Borrow USDT"
+    instructions: !include "./instructions/aave-core-borrow-usdt.yaml"
+
+  # Aave Horizon Positions
+  - id: "87224421864707228069930864185331520862"
+    group_id: "2"
+    description: "Aave Horizon Supply USDC"
+    instructions: !include "./instructions/aave-horizon-supply-usdc.yaml"

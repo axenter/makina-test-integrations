@@ -1,0 +1,50 @@
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${token_list.mainnet.USDC}
+  instruction:
+    label: "USDC (Horizon)"
+    path: "../../../blueprints/aave/deposit.yaml:add_collateral"
+    inputs:
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+      asset_address:
+        type: "address"
+        value: ${token_list.mainnet.USDC}
+      aave_pool_instance:
+        type: "address"
+        value: ${config.aave_horizon_address}
+
+- is_debt: false
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${token_list.mainnet.USDC}
+  instruction:
+    label: "USDC (Horizon)"
+    path: "../../../blueprints/aave/withdraw.yaml:withdraw_collateral"
+    inputs:
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+      asset_address:
+        type: "address"
+        value: ${token_list.mainnet.USDC}
+      aave_pool_instance:
+        type: "address"
+        value: "${config.aave_horizon_address}"
+
+- is_debt: false
+  instruction_type: "ACCOUNTING"
+  affected_tokens:
+    - ${token_list.mainnet.USDC}
+  instruction:
+    label: "USDC (Horizon)"
+    path: "../../../blueprints/aave/account.yaml:account"
+    inputs:
+      aave_token:
+        type: "address"
+        value: "0x68215B6533c47ff9f7125aC95adf00fE4a62f79e"
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
