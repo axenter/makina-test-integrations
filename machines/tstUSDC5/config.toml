@@ -1,0 +1,25 @@
+name = "tstUSDC5"
+chain = "mainnet"
+address = "0x1686Cf39c711Abd95FC41bDfD4c8c3c27d9c4f4b"
+
+[calibers.mainnet]
+address = "0x578E158804E4e0B3aE9A60d7Fb8D24c16229B89a"
+swapper = "0xe403614F41554fC0f7A3dD581878D0024Dc978E9"
+rootfiles = "github:MakinaHQ/makina-test-integrations/machines/tstUSDC5/mainnet/rootfiles"
+
+[calibers.mainnet.accounting_token]
+address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+decimals = 6
+name = "USD Coin"
+symbol = "USDC"
+
+[calibers.arbitrum]
+address = "0x578E158804E4e0B3aE9A60d7Fb8D24c16229B89a"
+swapper = "0xe403614F41554fC0f7A3dD581878D0024Dc978E9"
+rootfiles = "github:MakinaHQ/makina-test-integrations/machines/tstUSDC5/arbitrum/rootfiles"
+
+[calibers.arbitrum.accounting_token]
+address = "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+decimals = 6
+name = "USD Coin"
+symbol = "USDC"

@@ -1,0 +1,56 @@
+- is_debt: true
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${token_list.mainnet.USDT}
+  instruction:
+    label: "USDT"
+    path: "../../../blueprints/aave/borrow.yaml:borrow_asset"
+    inputs:
+      token:
+        type: "address"
+        value: ${token_list.mainnet.USDT}
+      interest_rate_mode:
+        type: "uint256"
+        value: "2"
+      referral_code:
+        type: "uint256"
+        value: "0"
+      aave_pool_instance:
+        type: "address"
+        value: ${config.aave_core_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+
+- is_debt: true
+  instruction_type: "ACCOUNTING"
+  affected_tokens:
+    - ${token_list.mainnet.USDT}
+  instruction:
+    label: "USDT"
+    path: "../../../blueprints/aave/account.yaml:account"
+    inputs:
+      aave_token:
+        type: "address"
+        value: "0x6df1C1E379bC5a00a7b4C6e67A203333772f45A8"
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
+
+- is_debt: true
+  instruction_type: "MANAGEMENT"
+  affected_tokens:
+    - ${token_list.mainnet.USDT}
+  instruction:
+    label: "USDT"
+    path: "../../../blueprints/aave/repay.yaml:repay_asset"
+    inputs:
+      token_address:
+        type: "address"
+        value: ${token_list.mainnet.USDT}
+      pool_address:
+        type: "address"
+        value: ${config.aave_core_address}
+      context_helper_address:
+        type: "address"
+        value: ${config.context_helper_address}
