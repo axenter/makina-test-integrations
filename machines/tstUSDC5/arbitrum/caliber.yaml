@@ -19,4 +19,3 @@ positions:
       vault_label: "Steakhouse High Yield USDC"
       token_address: ${token_list.arbitrum.USDC}
       vault_address: "0x5c0C306Aaa9F877de636f4d5822cA9F2E81563BA"
-  
