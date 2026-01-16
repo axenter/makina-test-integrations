@@ -45,22 +45,6 @@ positions:
       vault_label: "MEV Capital USDC"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xd63070114470f685b75B74D60EEc7c1113d33a3D"
-  # - id: "<update>"
-  #   group_id: "0"
-  #   description: "Morpho Vault KPK USDC Prime"
-  #   instructions: !include "../../../instructions/morpho-vault.yaml"
-  #   vars:
-  #     vault_label: "KPK USDC Prime"
-  #     token_address: ${token_list.mainnet.USDC}
-  #     vault_address: "0xe108fbc04852B5df72f9E44d7C29F47e7A993aDd"
-  # - id: "<update>"
-  #   group_id: "0"
-  #   description: "Morpho Vault Hakutora USDC"
-  #   instructions: !include "../../../instructions/morpho-vault.yaml"
-  #   vars:
-  #     vault_label: "Hakutora USDC"
-  #     token_address: ${token_list.mainnet.USDC}
-  #     vault_address: "0x974c8FBf4fd795F66B85B73ebC988A51F1A040a9"
   - id: "239709107284824071718045124985443453227"
     group_id: "0"
     description: "Morpho Vault Alpha USDC Core"
@@ -93,6 +77,54 @@ positions:
       vault_label: "MEV Capital PTS USDC"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xd41830d88dfD08678b0B886E0122193d54b02Acc"
+  - id: "235947668492631263653814281790289094700"
+    group_id: "0"
+    description: "Morpho Vault KPK USDC Prime"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "KPK USDC Prime"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xe108fbc04852B5df72f9E44d7C29F47e7A993aDd"
+  - id: "145181456680648690506099136127005140305"
+    group_id: "0"
+    description: "Morpho Vault Hyperithm Degen USDC"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Hyperithm Degen USDC"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0x777791c4d6dc2ce140d00d2828a7c93503c67777"
+  - id: "273739676753663843967743313854543738189"
+    group_id: "0"
+    description: "Morpho Vault Sentora Main PYUSD"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Sentora Main PYUSD"
+      token_address: ${token_list.mainnet.PYUSD}
+      vault_address: "0xb576765fb15505433af24fee2c0325895c559fb2"
+  - id: "145068745331462917611735104537565685879"
+    group_id: "0"
+    description: "Morpho Vault Hyperithm Midcurve USDC"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Hyperithm Midcurve USDC"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0xCdaea3dde6cE5969aA1414A82A3A681cEd51Ce72"
+  - id: "339036024154882929384800789080752706274"
+    group_id: "0"
+    description: "Morpho Vault August  V2 USDC"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "August V2 USDC"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0x7ceB0f01Cb7187a2EBED5661eCC4d5701d8F2350"
+  - id: "287972541400220405479010366660803291000"
+    group_id: "0"
+    description: "Morpho Vault Gauntlet Core eUSD"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Gauntlet Core eUSD"
+      token_address: ${token_list.mainnet.eUSD}
+      vault_address: "0xc080f56504e0278828a403269db945f6c6d6e014"
   # Other Positions
   - id: "777"
     group_id: "0"

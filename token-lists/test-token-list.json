@@ -100,6 +100,13 @@
         "name": "Wrapped Ether",
         "decimals": 18,
         "symbol": "WETH"
+      },
+      {
+        "chainId": 1,
+        "address": "0xA0d69E286B938e21CBf7E51D71F6A4c8918f482F",
+        "name": "Electronic Dollar",
+        "decimals": 18,
+        "symbol": "eUSD"
       }
     ]
   }
