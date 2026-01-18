@@ -36,6 +36,15 @@ positions:
       vault_label: "Gauntlet USDC Frontier"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xc582F04d8a82795aa2Ff9c8bb4c1c889fe7b754e"
+  - id: "677"
+    group_id: "0"
+    description: "Morpho Vault Hyperithm USDC Degen"
+    instructions: !include "../../../instructions/morpho-vault.yaml"
+    vars:
+      vault_label: "Hyperithm USDC Degen"
+      token_address: ${token_list.mainnet.USDC}
+      vault_address: "0x777791C4d6DC2CE140D00D2828a7C93503c67777"
+
   # Morpho Market Positions
 
   # Morpho tBTC/USDC — deposit/withdrawal collateral
