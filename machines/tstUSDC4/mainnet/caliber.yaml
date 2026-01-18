@@ -36,6 +36,7 @@ positions:
       vault_label: "Gauntlet USDC Frontier"
       token_address: ${token_list.mainnet.USDC}
       vault_address: "0xc582F04d8a82795aa2Ff9c8bb4c1c889fe7b754e"
+
   # Morpho Market Positions
 
   # Morpho tBTC/USDC — deposit/withdrawal collateral
@@ -77,6 +78,26 @@ positions:
       market_label: "sUSDe/USDC (0x85c7...fcab)"
       token_address: ${token_list.mainnet.USDC}
       market_id: "0x85c7f4374f3a403b36d54cc284983b2b02bbd8581ee0f3c36494447b87d9fcab"
+
+  # Morpho wstETH/USDC — deposit/withdrawal collateral
+  - id: "675"
+    group_id: "3"
+    description: "Morpho wstETH Collateral (market: 0xb323...86cc)"
+    instructions: !include "../../../instructions/morpho-market-collateral.yaml"
+    vars:
+      market_label: "wstETH/USDC (0xb323...86cc)"
+      token_address: ${token_list.mainnet.wstETH}
+      market_id: "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc"
+
+  # Morpho wstETH/USDC — borrow/repay USDC
+  - id: "676"
+    group_id: "3"
+    description: "Morpho USDC Debt (market: 0xb323...86cc)"
+    instructions: !include "../../../instructions/morpho-market-debt.yaml"
+    vars:
+      market_label: "wstETH/USDC (0xb323...86cc)"
+      token_address: ${token_list.mainnet.USDC}
+      market_id: "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc"
 
   # Other Positions
   - id: "777"
